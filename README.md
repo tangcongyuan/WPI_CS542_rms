@@ -6,4 +6,6 @@ This is the CS542 project, which is building a website to manage room usage of W
 
 It will be fun!
 
+Hopefully, we can finish it by the end of this month! Cheers!!!
+
 Congyuan Tang @ Nov.13th 2014

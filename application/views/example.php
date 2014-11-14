@@ -28,10 +28,6 @@ a:hover
 </head>
 <body>
 	<div style='height:20px;'></div>
-		<div>
-		<?php echo 'This is the building information page.'; ?>
-		</div>
-	<div style='height:20px;'></div>
     <div>
 		<?php echo $output; ?>
     </div>

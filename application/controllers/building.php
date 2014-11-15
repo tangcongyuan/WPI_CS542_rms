@@ -12,7 +12,7 @@ class Building extends CI_Controller {
   {
     $crud = new grocery_CRUD();
     $crud->set_table('building');
-    $crud->columns('building_name','location');
+    $crud->columns('building_id','building_name','location');
     $output = $crud->render();
     $this->_example_output($output);
   }

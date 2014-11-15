@@ -12,7 +12,7 @@ class Room extends CI_Controller {
   {
     $crud = new grocery_CRUD();
     $crud->set_table('room');
-    $crud->columns('building_name','location');
+    $crud->columns('room_id','room_name','floor','size','building_id');
     $output = $crud->render();
     $this->_example_output($output);
   }

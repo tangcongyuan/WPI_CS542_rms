@@ -18,7 +18,8 @@ class Home extends CI_Controller {
 			$crud->add_action('', '', 'home/room', 'read-icon');
 			$crud->unset_add();
 			$crud->unset_edit();
-			$crud->unset_delete();
+			$crud->unset_delete();		
+			$crud->unset_read();
 			$output = $crud->render();
 		   
 			$session_data = $this->session->userdata('logged_in');
@@ -34,9 +35,18 @@ class Home extends CI_Controller {
 	
 	function room($param = null)
 	{
-		echo $param; die();
+		//echo $param; die();
 		$crud = new grocery_CRUD();
-		$crud->set_table('building');
+		$crud->set_table('room');
+		$crud->columns('room_name','floor','size');	
+		$crud->where('room.building_id',$param);
+		$crud->add_action('', '', 'home/calendar', 'read-icon');
+		$crud->unset_add();
+		$crud->unset_edit();
+		$crud->unset_delete();
+		$crud->unset_read();
+		$output = $crud->render();
+		$this->load->view('choose_room.php',$output);   
 		
 	}
 	

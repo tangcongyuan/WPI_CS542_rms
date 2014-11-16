@@ -10,14 +10,10 @@
 		<script src="<?php echo $file; ?>"></script>
 	<?php endforeach; ?>
 </head>
-<?php 
-//print_r($css_files);
 
-$session_data = $this->session->userdata('logged_in'); ?>
 <body>
    <h1>Home</h1>
-   <h2>Welcome <?php echo $session_data['email']; ?>!</h2>
-   Choose building
+  <h3>Choose Room in Building </h3>
    <br />
    <div>
 		<?php echo $output; ?>

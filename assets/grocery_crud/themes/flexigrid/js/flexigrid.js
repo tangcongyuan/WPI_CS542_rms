@@ -165,6 +165,36 @@ $(function(){
 
 		return false;
 	});
+	
+	$('.ajax_list').on('click','.approve-icon', function(){
+		var delete_url = $(this).attr('href');
+
+		var this_container = $(this).closest('.flexigrid');
+
+		if( confirm( "Are you sure you want to approve?" ) )
+		{
+			$.ajax({
+				url: delete_url,
+				dataType: 'json',
+				success: function(data)
+				{
+					if(data.success)
+					{
+						this_container.find('.ajax_refresh_and_loading').trigger('click');
+
+						success_message(data.success_message);
+					}
+					else
+					{
+						error_message(data.error_message);
+
+					}
+				}
+			});
+		}
+
+		return false;
+	});
 
 	$('.export-anchor').click(function(){
 		var export_url = $(this).attr('data-url');

@@ -65,12 +65,12 @@
                         <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-user">
-                        <li><a href="user/profile"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                        <li><a href="<?php echo base_url(); ?>index.php/user/profile"><i class="fa fa-user fa-fw"></i> User Profile</a>
                         </li>
-                        <li><a href="user/changePassword"><i class="fa fa-lock fa-fw"></i> Change Password</a>
+                        <li><a href="<?php echo base_url(); ?>index.php/user/changePassword"><i class="fa fa-lock fa-fw"></i> Change Password</a>
                         </li>
                         <li class="divider"></li>
-                        <li><a href="~/home/logout"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        <li><a href="<?php echo base_url(); ?>index.php/home/logout"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
                         </li>
                     </ul>
                     <!-- /.dropdown-user -->
@@ -104,7 +104,7 @@
                            <a href="#"><i class="fa fa-check fa-fw"></i> Approval<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="<?php echo base_url(); ?>index.php/approval/history"><i class="fa fa-edit fa-fw"></i> Approve/Reject</a>
+                                    <a href="<?php echo base_url(); ?>index.php/approval"><i class="fa fa-edit fa-fw"></i> Approve/Reject</a>
                                 </li>
 								<li>
                                     <a href="<?php echo base_url(); ?>index.php/approval/history"><i class="fa fa-archive fa-fw"></i> Approval History</a>

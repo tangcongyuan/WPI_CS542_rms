@@ -56,7 +56,7 @@
                                 <!-- Change this to a button or input when using this as a form -->
                                 <input type="submit" class="btn btn-lg btn-primary btn-block" value="Login" />
 								<br />
-								Haven't registered yet? Sign up <a href="user/register">here</a>!
+								Haven't registered yet? Sign up <a href="register">here</a>!
                             </fieldset>
                         </form>
                     </div>

@@ -10,21 +10,35 @@ class Approval extends CI_Controller {
 	   $this->load->model('room_model');
 	}
 	 
-	function index()
+		function index()
 	{
 	   if($this->session->userdata('logged_in'))
 	   {
 			$crud = new grocery_CRUD();
 			$crud->set_table('reservation');
-			$crud->set_relation('reserver_id','user','firstname');
-			$crud->set_relation('status','reservation_status','status');
-			$crud->columns('reserver_id','activity','status');	
-			
-			$crud->add_action('', '', 'approval/reject', 'reject-icon');
+
+		    //$crud->set_relation_n_n('building_name', 'room', 'building', 'room_id', 'building_id', 'building_name','priority');
+			$crud->columns('reserver_id', 'building_id', 'room_id', 'num_people', 'start_date', 'end_date', 'activity', 'status');
+			$crud->unset_columns('reason');
+			$crud->set_relation('reserver_id', 'user', 'firstname');
+			$crud->set_relation('status', 'reservation_status', 'status');
+			$crud->set_relation('room_id', 'room', 'room_name');
+			$crud->set_relation('building_id', 'building', 'building_name');
+
+	
+			$crud->display_as('reserver_id', 'Reserver');
+			$crud->display_as('room_id', 'Room');
+			$crud->display_as('num_people', 'Attendants');
+			$crud->display_as('building_name', 'Building');
+			//to refresh list; only to show waiting reservations
+			$crud->where('reservation.status',1);
+			//***
 			$crud->add_action('', '', 'approval/approve', 'approve-icon');
+            $crud->add_action('', '', 'approval/reject', 'reject-icon');
+			//***
 			$crud->unset_add();
 			$crud->unset_edit();
-			//$crud->unset_delete();		
+			$crud->unset_delete();		
 			$crud->unset_read();
 			$output = $crud->render();
 		   
@@ -50,6 +64,34 @@ class Approval extends CI_Controller {
 		echo json_encode(array('success' => true , 'success_message' => "The reservation has been successfully approved!"));
 	}
 	
+	function reject($reservation_id = null){
+		//$this->load->view('view_reject', $reservation_id);
+		
+		$this->load->helper('form');
+        $this->load->library('form_validation');
+        $data['reservation_id'] = $reservation_id;
+        $reservation_id = (isset($_POST['reservation_id'])) ? $_POST['reservation_id'] : '';
+        $this->session->set_flashdata('reservation_id',$reservation_id);
+        
+
+		$this->form_validation->set_rules('reason', 'Reason', 'required');
+		if ($this->form_validation->run() === FALSE)
+		{
+			//echo "hoi ".$reservation_id; die();
+
+	       //$data['room_name'] = $this->room_model->get_room($room_id)->room_name;
+	       $this->load->view('view_reject', $data);
+		}
+		else
+		{
+			//echo $this->input->post('reason'); echo " ".$reservation_id; 
+
+	       $this->reservation_model->set_reason($reservation_id);
+	       //print_r($this->room_id);
+	       redirect('approval'.$this->session->flashdata('reservation_id'));
+		}
+
+	}
 	
  
 }

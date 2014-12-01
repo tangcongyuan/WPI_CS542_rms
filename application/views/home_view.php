@@ -69,7 +69,7 @@
                         <li><a href="user/changePassword"><i class="fa fa-lock fa-fw"></i> Change Password</a>
                         </li>
                         <li class="divider"></li>
-                        <li><a href="home/logout"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        <li><a href="<?php echo base_url(); ?>index.php/home/logout"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
                         </li>
                     </ul>
                     <!-- /.dropdown-user -->
@@ -91,10 +91,10 @@
                             <a href="home"><i class="fa fa-book fa-fw"></i> Reservation<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="home/history"><i class="fa fa-calendar fa-fw"></i>  Reserve</a>
+                                    <a href="<?php echo base_url(); ?>index.php/home"><i class="fa fa-calendar fa-fw"></i>  Reserve</a>
                                 </li>
 								<li>
-                                    <a href="home/history"><i class="fa fa-archive fa-fw"></i>  Reservation History</a>
+                                    <a href="<?php echo base_url(); ?>index.php/home/history"><i class="fa fa-archive fa-fw"></i>  Reservation History</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
@@ -103,10 +103,10 @@
                            <a href="#"><i class="fa fa-check fa-fw"></i> Approval<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="approval/history"><i class="fa fa-edit fa-fw"></i> Approve/Reject</a>
+                                    <a href="<?php echo base_url(); ?>index.php/approval"><i class="fa fa-edit fa-fw"></i> Approve/Reject</a>
                                 </li>
 								<li>
-                                    <a href="approval/history"><i class="fa fa-archive fa-fw"></i> Approval History</a>
+                                    <a href="<?php echo base_url(); ?>index.php/approval/history"><i class="fa fa-archive fa-fw"></i> Approval History</a>
                                 </li>
                             </ul>
                         </li>
@@ -114,16 +114,16 @@
                             <a href="#"><i class="fa fa-cogs fa-fw"></i> Management<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="building"><i class="fa fa-building fa-fw"></i> Building</a>
+                                    <a href="<?php echo base_url(); ?>index.php/building"><i class="fa fa-building fa-fw"></i> Building</a>
                                 </li>
                                 <li>
-                                    <a href="room"><i class="fa fa-home fa-fw"></i> Room</a>
+                                    <a href="<?php echo base_url(); ?>index.php/room"><i class="fa fa-home fa-fw"></i> Room</a>
                                 </li>
 								<li>
-                                    <a href="equipment"><i class="fa fa-gear fa-fw"></i> Equipment</a>
+                                    <a href="<?php echo base_url(); ?>index.php/equipment"><i class="fa fa-gear fa-fw"></i> Equipment</a>
                                 </li>
 								<li>
-                                    <a href="user"><i class="fa fa-user fa-fw"></i> User</a>
+                                    <a href="<?php echo base_url(); ?>index.php/user"><i class="fa fa-user fa-fw"></i> User</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->

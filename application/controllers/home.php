@@ -99,7 +99,7 @@ class Home extends CI_Controller {
 	
 	function reserve($room_id = null, $start= null, $hourStart= null, $end= null, $hourEnd= null)
 	{
-		//echo $room_id . " and " . $date;
+		/* //echo $room_id . " and " . $date;
 		$this->load->helper('form');
 		$this->load->library('form_validation');
 
@@ -116,12 +116,19 @@ class Home extends CI_Controller {
 			$data['room_name'] = $this->room_model->get_room($room_id)->room_name;
 			$this->load->view('reservation_form', $data);
 		}
-		else
+		else */
 		{
+			$room_id = (isset($_POST['room_id'])) ? $_POST['room_id'] : '';
+			$this->session->set_flashdata('room_id',$room_id);
 			$this->reservation_model->set_reservation();
-			//print_r($this->room_id);
-			redirect('home/room_calendar/'.$this->session->flashdata('room_id'));
+			//print_r($room_id); die();
+			redirect('home/room_calendar/'.$room_id);
 		}
+	}
+	
+	function formReservation()
+	{
+		$this->load->view('reservation_form.php'); 
 	}
 	
 	function saveData()

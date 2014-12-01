@@ -148,7 +148,7 @@
 				right: 'month,agendaWeek,agendaDay'
 			},
 			selectable: true,
-			defaultDate: '2014-11-12',
+			//defaultDate: '2014-11-12',
 			editable: true,
 			eventLimit: true, // allow "more" link when too many events
 			events: {
@@ -250,6 +250,8 @@
 				//window.location.href = "http://localhost/WPI_CS542_rms/index.php/home/reserve/1/" + date.format("YYYY-MM-DD");
 			}
 		});
+
+    $('#calendar').fullCalendar('gotoDate', currentDate);
 
 	});
 

@@ -207,7 +207,7 @@
 							modal: true,
 							width: 550,
 							title: 'Details',
-							buttons: {
+							/* buttons: {
 								"Save": function() {
 									insert(
 										$( "#activity" ).val(),
@@ -219,7 +219,7 @@
 								"Cancel": function() {
 									$( this ).dialog( "close" );
 								}
-							}
+							} */
 					};
 
 				// $("#dialog").dialog(opt).dialog("open");

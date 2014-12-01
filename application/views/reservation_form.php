@@ -1,5 +1,5 @@
 
-<h2>Create Reservation </h2>
+<h4>Create Reservation </h4>
 
 <?php echo validation_errors(); ?>
 

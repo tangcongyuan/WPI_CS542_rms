@@ -99,49 +99,17 @@ class Home extends CI_Controller {
 
 	function reserve($room_id = null, $start= null, $hourStart= null, $end= null, $hourEnd= null)
 	{
-<<<<<<< HEAD
-		/* //echo $room_id . " and " . $date;
-=======
->>>>>>> 6d91627b896cc8179de267fc2d77a7b746b29acd
-		$this->load->helper('form');
-		$this->load->library('form_validation');
-
-		$data['title'] = 'Reserve a Room';
-		$data['room_id'] = $room_id;
-
-		$data['startDate'] = $start." ".$hourStart.":00";
-		$data['endDate'] = $end." ".$hourEnd.":00";
-		$room_id = (isset($_POST['room_id'])) ? $_POST['room_id'] : '';
-
-		$this->session->set_flashdata('room_id',$room_id);
-		$this->form_validation->set_rules('activity', 'Activity', 'required');
-		if ($this->form_validation->run() === FALSE)
-		{
-			$data['room_name'] = $this->room_model->get_room($room_id)->room_name;
-			$this->load->view('reservation_form', $data);
-		}
-		else */
-		{
 			$room_id = (isset($_POST['room_id'])) ? $_POST['room_id'] : '';
 			$this->session->set_flashdata('room_id',$room_id);
 			$this->reservation_model->set_reservation();
-<<<<<<< HEAD
-			//print_r($room_id); die();
 			redirect('home/room_calendar/'.$room_id);
-		}
-	}
-	
-	function formReservation()
-	{
-		$this->load->view('reservation_form.php'); 
-	}
-	
-=======
-			redirect('home/room_calendar/'.$this->session->flashdata('room_id'));
-		}
 	}
 
->>>>>>> 6d91627b896cc8179de267fc2d77a7b746b29acd
+	function formReservation()
+	{
+		$this->load->view('reservation_form.php');
+	}
+
 	function saveData()
 	{
 		$data['activity'] = $_POST['activity'];

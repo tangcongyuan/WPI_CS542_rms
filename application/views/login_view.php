@@ -50,7 +50,7 @@
                                     <input class="form-control" placeholder="E-mail" name="email"  autofocus>
                                 </div>
                                 <div class="form-group">
-                                    <input class="form-control" placeholder="Password" name="password" value="">
+                                    <input class="form-control" placeholder="Password" name="password" type="password" value="">
                                 </div>
 
                                 <!-- Change this to a button or input when using this as a form -->

@@ -2,19 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head><title>RMS-Room Calendar</title>
-<meta charset='utf-8' />
-<link href='<?php echo base_url(); ?>/fullcalendar/fullcalendar.css' rel='stylesheet' />
-<link href='<?php echo base_url(); ?>/fullcalendar/fullcalendar.print.css' rel='stylesheet' media='print' />
-<script src='<?php echo base_url(); ?>/fullcalendar/lib/moment.min.js'></script>
-<script src='<?php echo base_url(); ?>/fullcalendar/lib/jquery.min.js'></script>
-<script src='<?php echo base_url(); ?>/fullcalendar/fullcalendar.min.js'></script>
-
-<script src="<?php echo base_url(); ?>/fullcalendar/jquery-ui.min.js"></script>
-
-<link rel="stylesheet" href="<?php echo base_url(); ?>/fullcalendar/jquery-ui.css" />
-<<<<<<< HEAD
-
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -45,7 +33,7 @@
 	<script src='<?php echo base_url(); ?>/fullcalendar/lib/moment.min.js'></script>
 	<script src='<?php echo base_url(); ?>/fullcalendar/lib/jquery.min.js'></script>
 	<script src='<?php echo base_url(); ?>/fullcalendar/fullcalendar.min.js'></script>
-	 
+
 	<script src="<?php echo base_url(); ?>/fullcalendar/jquery-ui.min.js"></script>
 
 	<link rel="stylesheet" href="<?php echo base_url(); ?>/fullcalendar/jquery-ui.css" />
@@ -67,8 +55,7 @@
                 <a class="navbar-brand" href="index.html">Room Management System</a>
             </div>
             <!-- /.navbar-header -->
-=======
->>>>>>> 6d91627b896cc8179de267fc2d77a7b746b29acd
+
 
             <ul class="nav navbar-top-links navbar-right">
 
@@ -97,7 +84,7 @@
                     <ul class="nav" id="side-menu">
                         <li class="sidebar-search">
                             <div class="input-group custom-search-form">
-                                
+
                             </div>
                             <!-- /input-group -->
                         </li>
@@ -142,7 +129,7 @@
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
-                        
+
                     </ul>
                 </div>
                 <!-- /.sidebar-collapse -->
@@ -207,26 +194,18 @@
 				$('#calendar').fullCalendar('unselect');
 				//alert(startDate + "adsf" + endDate)
 
-<<<<<<< HEAD
 				var loadDate = {
 								  'start_date' : start.format("YYYY-MM-DD HH:mm:ss"),
 								  'end_date' : end.format("YYYY-MM-DD HH:mm:ss"),
 								  'room_id' : <?php echo $room_id; ?>
 							   };
 
-				
-=======
 
->>>>>>> 6d91627b896cc8179de267fc2d77a7b746b29acd
 				if(view.name == 'agendaDay'){
 					var opt = {
 							autoOpen: false,
 							modal: true,
 							width: 550,
-<<<<<<< HEAD
-							height:450,
-=======
->>>>>>> 6d91627b896cc8179de267fc2d77a7b746b29acd
 							title: 'Details',
 							buttons: {
 								"Save": function() {
@@ -242,17 +221,12 @@
 								}
 							}
 					};
-<<<<<<< HEAD
 
-				// $("#dialog").dialog(opt).dialog("open");  
-				 
+				// $("#dialog").dialog(opt).dialog("open");
+
 				 $("#dialog").html('').load('http://localhost/WPI_CS542_rms/index.php/home/formReservation', loadDate, function () {
 						$("#dialog").dialog(opt).dialog("open");
 					});
-=======
-				 $("#dialog").dialog(opt).dialog("open");
-
->>>>>>> 6d91627b896cc8179de267fc2d77a7b746b29acd
 
 				/* var title= prompt('Event Title: ');
 				var num_people= prompt('Num of People: ');
@@ -316,7 +290,7 @@
                         </div>
 						<div class="panel-body">
 							<div id="dialog" class="event-dialog" title="Event"  style="display:none;">
-		<div id="dialog-inner">		
+		<div id="dialog-inner">
 			<!--
 <?php //echo "This is the room id: ".$room_id; ?>
 <style>
@@ -359,13 +333,9 @@
 			<?php echo form_close(); ?>-->
 		</div>
     </div>
-	
+
 			<?php echo form_close(); ?>
     </div>
-=======
-			<?php echo form_close(); ?>
-    </div>
->>>>>>> 6d91627b896cc8179de267fc2d77a7b746b29acd
   </div>
 
 	<h2 align="center">Room Calendar - <?php echo $room_name; ?></h2>

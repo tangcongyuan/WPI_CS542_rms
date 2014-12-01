@@ -1,7 +1,6 @@
 <?php
 class Reservation_model extends CI_Model {
 
-//<<<<<<< Updated upstream
 	public function __construct()
 	{
 		$this->load->database();
@@ -87,15 +86,9 @@ class Reservation_model extends CI_Model {
 		 return false;
 	   }
 	}
-<<<<<<< HEAD
-	
-	public function set_reason($reservation_id)
-	{		
-=======
 
 	public function set_reason($reservation_id)
 	{
->>>>>>> 6d91627b896cc8179de267fc2d77a7b746b29acd
 		$data = array(
 		'status' => 3,
 		'reason' => $this->input->post('reason')
@@ -104,9 +97,4 @@ class Reservation_model extends CI_Model {
 		$this->db->where('reservation_id', $reservation_id);
 		return $this->db->update('reservation', $data);
 	}
-
-<<<<<<< HEAD
-
-=======
->>>>>>> 6d91627b896cc8179de267fc2d77a7b746b29acd
 }

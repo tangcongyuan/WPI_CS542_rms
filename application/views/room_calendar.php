@@ -176,7 +176,7 @@
 				if(view.name == 'agendaDay')
 				{
 					//alert(date.format('TT'));
-					window.location.href = "http://localhost/WPI_CS542_rms/index.php/home/reserve/" + <?php echo $room_id; ?> + "/" + date.format("YYYY-MM-DD");
+					//window.location.href = "http://localhost/WPI_CS542_rms/index.php/home/reserve/" + <?php echo $room_id; ?> + "/" + date.format("YYYY-MM-DD");
 				}
 				//alert(date.format('TT'));
 				if(view.name == 'month')

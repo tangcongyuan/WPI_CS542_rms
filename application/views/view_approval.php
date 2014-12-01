@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
    <title>RMS-Approval</title>
-   <?php 
+   <?php
 		foreach($css_files as $file): ?>
 		<link type="text/css" rel="stylesheet" href="<?php echo $file; ?>" />
 	<?php endforeach; ?>
@@ -10,11 +10,9 @@
 		<script src="<?php echo $file; ?>"></script>
 	<?php endforeach; ?>
 </head>
-<?php 
-//print_r($css_files);
-
+<?php
 $session_data = $this->session->userdata('logged_in');
-echo $session_data['id'];
+
  ?>
 <body>
    <h1>Home</h1>
@@ -24,8 +22,7 @@ echo $session_data['id'];
 		<?php echo $output; ?>
     </div>
    <a href="home/logout">Logout</a>
-   
-   
+
+
 </body>
 </html>
-

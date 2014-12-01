@@ -33,6 +33,7 @@
 </head>
 
 <body>
+<!-- <<<<<<< Updated upstream -->
 
     <div class="container">
         <div class="row">
@@ -51,7 +52,7 @@
                                 <div class="form-group">
                                     <input class="form-control" placeholder="Password" name="password" value="">
                                 </div>
-                                
+
                                 <!-- Change this to a button or input when using this as a form -->
                                 <input type="submit" class="btn btn-lg btn-primary btn-block" value="Login" />
 								<br />
@@ -77,5 +78,19 @@
     <script src="<?php echo base_url(); ?>admin-theme/js/sb-admin-2.js"></script>
 
 </body>
-
+<!--
+=======
+   <h1>Simple Login with CodeIgniter</h1>
+   <?php echo validation_errors(); ?>
+   <?php echo form_open('verifylogin'); ?>
+     <label for="email">Email:</label>
+     <input type="text" size="20" id="email" name="email"/>
+     <br/>
+     <label for="password">Password:</label>
+     <input type="password" size="20" id="password" name="password"/>
+     <br/>
+     <input type="submit" value="Login"/><input type="submit" value="Sign up"/>
+   </form>
+</body>
+>>>>>>> Stashed changes -->
 </html>

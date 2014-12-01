@@ -22,4 +22,10 @@ class User extends CI_Controller {
     $this->load->view('example.php',$output);
   }
 
+  public function register()
+  {
+    $this->load->helper(array('form'));
+    $this->load->view('sign_up');
+  }
+
 }

@@ -19,13 +19,7 @@ class User extends CI_Controller {
 
   public function _example_output($output = null)
   {
-    $this->load->view('example.php',$output);
-  }
-
-  public function register()
-  {
-    $this->load->helper(array('form'));
-    $this->load->view('sign_up');
+    $this->load->view('user_view.php',$output);
   }
 
 }

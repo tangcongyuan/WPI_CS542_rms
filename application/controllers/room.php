@@ -19,7 +19,7 @@ class Room extends CI_Controller {
 
   public function _example_output($output = null)
   {
-    $this->load->view('example.php',$output);
+    $this->load->view('room_view.php',$output);
   }
 
 }

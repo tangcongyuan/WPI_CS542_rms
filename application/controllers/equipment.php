@@ -19,7 +19,7 @@ class Equipment extends CI_Controller {
 
   public function _example_output($output = null)
   {
-    $this->load->view('example.php',$output);
+    $this->load->view('equipment_view.php',$output);
   }
 
 }

@@ -19,7 +19,7 @@ class Building extends CI_Controller {
 
   public function _example_output($output = null)
   {
-    $this->load->view('example.php',$output);
+    $this->load->view('building_view.php',$output);
   }
 
 }

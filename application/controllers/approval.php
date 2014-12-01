@@ -22,14 +22,15 @@ class Approval extends CI_Controller {
 			$crud->set_relation('status', 'reservation_status', 'status');
 			$crud->set_relation('room_id', 'room', 'room_name');
 			$crud->set_relation('building_id', 'building', 'building_name');
+
 			$crud->display_as('reserver_id', 'Reserver');
 			$crud->display_as('room_id', 'Room');
 			$crud->display_as('num_people', 'Attendants');
-			$crud->display_as('building_name', 'Building');
+			$crud->display_as('building_id', 'Building');
 			//to refresh list; only to show waiting reservations
 			$crud->where('reservation.status',1);
 			$crud->add_action('', '', 'approval/approve', 'approve-icon');
-      $crud->add_action('', '', 'approval/reject', 'reject-icon');
+    		$crud->add_action('', '', 'approval/reject', 'reject-icon');
 			$crud->unset_add();
 			$crud->unset_edit();
 			$crud->unset_delete();
@@ -50,7 +51,7 @@ class Approval extends CI_Controller {
 
 	function _viewApproval($output = null)
   {
-    $this->load->view('view_approval.php',$output);
+    $this->load->view('approval_view.php',$output);
   }
 
 	public function approve($reservation_id = null)

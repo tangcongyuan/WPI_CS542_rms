@@ -13,6 +13,7 @@
 <script src="<?php echo base_url(); ?>/fullcalendar/jquery-ui.min.js"></script>
 
 <link rel="stylesheet" href="<?php echo base_url(); ?>/fullcalendar/jquery-ui.css" />
+<<<<<<< HEAD
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -66,6 +67,8 @@
                 <a class="navbar-brand" href="index.html">Room Management System</a>
             </div>
             <!-- /.navbar-header -->
+=======
+>>>>>>> 6d91627b896cc8179de267fc2d77a7b746b29acd
 
             <ul class="nav navbar-top-links navbar-right">
 
@@ -204,6 +207,7 @@
 				$('#calendar').fullCalendar('unselect');
 				//alert(startDate + "adsf" + endDate)
 
+<<<<<<< HEAD
 				var loadDate = {
 								  'start_date' : start.format("YYYY-MM-DD HH:mm:ss"),
 								  'end_date' : end.format("YYYY-MM-DD HH:mm:ss"),
@@ -211,12 +215,18 @@
 							   };
 
 				
+=======
+
+>>>>>>> 6d91627b896cc8179de267fc2d77a7b746b29acd
 				if(view.name == 'agendaDay'){
 					var opt = {
 							autoOpen: false,
 							modal: true,
 							width: 550,
+<<<<<<< HEAD
 							height:450,
+=======
+>>>>>>> 6d91627b896cc8179de267fc2d77a7b746b29acd
 							title: 'Details',
 							buttons: {
 								"Save": function() {
@@ -232,12 +242,17 @@
 								}
 							}
 					};
+<<<<<<< HEAD
 
 				// $("#dialog").dialog(opt).dialog("open");  
 				 
 				 $("#dialog").html('').load('http://localhost/WPI_CS542_rms/index.php/home/formReservation', loadDate, function () {
 						$("#dialog").dialog(opt).dialog("open");
 					});
+=======
+				 $("#dialog").dialog(opt).dialog("open");
+
+>>>>>>> 6d91627b896cc8179de267fc2d77a7b746b29acd
 
 				/* var title= prompt('Event Title: ');
 				var num_people= prompt('Num of People: ');
@@ -340,12 +355,17 @@
 
 				<input type="submit" name="submit" value="Save" />
 
+<<<<<<< HEAD
 			<?php echo form_close(); ?>-->
 		</div>
     </div>
 	
 			<?php echo form_close(); ?>
     </div>
+=======
+			<?php echo form_close(); ?>
+    </div>
+>>>>>>> 6d91627b896cc8179de267fc2d77a7b746b29acd
   </div>
 
 	<h2 align="center">Room Calendar - <?php echo $room_name; ?></h2>

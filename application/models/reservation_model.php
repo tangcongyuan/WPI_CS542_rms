@@ -35,10 +35,18 @@ class Reservation_model extends CI_Model {
 	
 	public function set_reservation()
 	{
+//<<<<<<< Updated upstream
 		$this->load->helper('url');
 
 		$slug = url_title($this->input->post('title'), 'dash', TRUE);
 		$session_data = $this->session->userdata('logged_in');
+/*=======
+		
+		$this->load->helper('url');
+
+		$slug = url_title($this->input->post('title'), 'dash', TRUE);
+
+>>>>>>> Stashed changes*/
 		$data = array(
 			'activity' => $this->input->post('activity'),
 			'start_date' => $this->input->post('start_date'),
@@ -46,14 +54,20 @@ class Reservation_model extends CI_Model {
 			'num_people' => $this->input->post('num_people'),
 			'room_id' => $this->input->post('room_id'),
 			'status' => 1,
+//<<<<<<< Updated upstream
 			'reserver_id' => $session_data['id']
 		);
 		
 		$this->session->set_flashdata('room_id',$this->input->post('room_id'));
+/*=======
+			'reserver_id' => $this->input->post('reserver_id')
+		);
+>>>>>>> Stashed changes*/
 
 		return $this->db->insert('reservation', $data);
 	}
 	
+//<<<<<<< Updated upstream
 	public function approve_reservation($reservation_id)
 	{
 		$data = array(
@@ -69,7 +83,9 @@ class Reservation_model extends CI_Model {
         $this->db->insert('reservation', $data);
     }
 
-	
+	/*
+=======
+>>>>>>> Stashed changes*/
 	function login($email, $password)
 	{
 	   $this -> db -> select('user_id, email, password');
@@ -89,4 +105,20 @@ class Reservation_model extends CI_Model {
 		 return false;
 	   }
 	}
+/*<<<<<<< Updated upstream
+=======*/
+
+	public function set_reason($reservation_id)
+	{
+		//echo "hei ".$reservation_id; die();
+		$data = array(
+		'status' => 3,
+		'reason' => $this->input->post('reason')
+		);
+
+		$this->db->where('reservation_id', $reservation_id);
+		return $this->db->update('reservation', $data);
+	}
+
+/*>>>>>>> Stashed changes*/
 }

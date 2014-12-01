@@ -108,7 +108,11 @@ class Home extends CI_Controller {
 		
 		$data['startDate'] = $start." ".$hourStart.":00";
 		$data['endDate'] = $end." ".$hourEnd.":00";
+//<<<<<<< Updated upstream
 		$room_id = (isset($_POST['room_id'])) ? $_POST['room_id'] : '';
+/*=======
+		
+>>>>>>> Stashed changes*/
 		$this->session->set_flashdata('room_id',$room_id);
 		$this->form_validation->set_rules('activity', 'Activity', 'required');
 		if ($this->form_validation->run() === FALSE)
@@ -124,6 +128,7 @@ class Home extends CI_Controller {
 		}
 	}
 	
+//<<<<<<< Updated upstream
 	function saveData()
 	{
 		$data['activity'] = $_POST['activity'];
@@ -131,15 +136,20 @@ class Home extends CI_Controller {
 		$this->reservation_model->add($data);
 	}
 	
+/*=======
+>>>>>>> Stashed changes*/
 	function getJson($room_id = null)
 	{
 		echo $this->reservation_model->get_reservation($room_id);
 	}
+//<<<<<<< Updated upstream
 	
 	public function about()
 	{
 		$this->load->view('about.php');    
 	}
+/*=======
+>>>>>>> Stashed changes*/
  
 }
 ?>

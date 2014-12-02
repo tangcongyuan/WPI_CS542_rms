@@ -180,7 +180,7 @@
 				//alert(date.format('TT'));
 				if(view.name == 'month')
 				{
-					$('#calendar').fullCalendar('gotoDate',date);
+					$('#calendar').fullCalendar('gotoDate',today);
 					$('#calendar').fullCalendar('changeView','agendaDay');
 				}
 			},
@@ -367,6 +367,9 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="<?php echo base_url(); ?>admin-theme/js/sb-admin-2.js"></script>
+
+
+
 
 </body>
 

@@ -250,7 +250,7 @@
 			}
 		});
 
-    $('#calendar').fullCalendar('gotoDate', currentDate);
+    $('#calendar').fullCalendar('today');
 
 	});
 
@@ -290,6 +290,8 @@
                              <b>Reserve a Room >> <i class="fa fa-building-o fa-fw"></i> Choose Building:  >> <i class="fa fa-home fa-fw"></i> Choose Room >> <i class="fa fa-calendar fa-fw"></i> Look-up Calendar for Room <?php echo $room_name; ?></b>
                         </div>
 						<div class="panel-body">
+						<h2 align="center">Room Calendar - <?php echo $room_name; ?></h2>
+	<div id='calendar'></div>
 							<div id="dialog" class="event-dialog" title="Event"  style="display:none;">
 		<div id="dialog-inner">
 			<!--
@@ -339,8 +341,7 @@
     </div>
   </div>
 
-	<h2 align="center">Room Calendar - <?php echo $room_name; ?></h2>
-	<div id='calendar'></div>
+	
 						</div>
 						</div>
                     </div>

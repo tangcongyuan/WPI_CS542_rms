@@ -94,11 +94,19 @@
                                     <a href="<?php echo base_url(); ?>index.php/home"><i class="fa fa-calendar fa-fw"></i>  Reserve</a>
                                 </li>
 								<li>
-                                    <a href="<?php echo base_url(); ?>index.php/home/history"><i class="fa fa-archive fa-fw"></i>  Reservation History</a>
+                                    <a href="<?php echo base_url(); ?>index.php/home/cancel"><i class="fa fa-eraser fa-fw"></i>  Cancel Reservation</a>
                                 </li>
+								<li>
+                                    <a href="<?php echo base_url(); ?>index.php/home/history"><i class="fa fa-archive fa-fw"></i>  Reservation History</a>
+                                </li>								
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
+						<?php 
+							$session_data = $this->session->userdata('logged_in');
+							if($session_data['role'] == 2 || $session_data['role'] == 3) //reserver=1, approval=2, admin=3
+							{
+						?>
 						<li>
                            <a href="#"><i class="fa fa-check fa-fw"></i> Approval<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
@@ -110,6 +118,11 @@
                                 </li>
                             </ul>
                         </li>
+						<?php
+							}
+							if($session_data['role'] == 3) //reserver=1, approval=2, admin=3
+							{
+						?>
                         <li>
                             <a href="#"><i class="fa fa-cogs fa-fw"></i> Management<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
@@ -128,6 +141,9 @@
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
+						<?php
+							}
+						?>
                         
                     </ul>
                 </div>

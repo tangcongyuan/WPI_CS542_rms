@@ -62,6 +62,11 @@ class Reservation_model extends CI_Model {
 		$this->db->where('reservation_id', $reservation_id);
 		return $this->db->update('reservation', $data);
 	}
+	
+	public function cancel_reservation($reservation_id)
+	{
+		return $this->db->delete('reservation', array('reservation_id' => $reservation_id)); ;
+	}
 
 	function add($data)
     {

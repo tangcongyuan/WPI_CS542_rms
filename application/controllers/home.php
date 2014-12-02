@@ -126,5 +126,95 @@ class Home extends CI_Controller {
 	{
 		$this->load->view('about.php');
 	}
+	
+	function history()
+	{
+	   if($this->session->userdata('logged_in'))
+	   {
+			$crud = new grocery_CRUD();
+			$crud->set_table('reservation');
+			$crud->columns('reserver_id', 'building_id', 'room_id', 'num_people', 'start_date', 'end_date', 'activity', 'status');
+			$crud->unset_columns('reason');
+			$crud->set_relation('reserver_id', 'user', 'firstname');
+			$crud->set_relation('status', 'reservation_status', 'status');
+			$crud->set_relation('room_id', 'room', 'room_name');
+			$crud->set_relation('building_id', 'building', 'building_name');
+
+			$crud->display_as('reserver_id', 'Reserver');
+			$crud->display_as('room_id', 'Room');
+			$crud->display_as('num_people', 'Attendants');
+			$crud->display_as('building_id', 'Building');
+			//to refresh list; only to show waiting reservations
+			$crud->or_where('reservation.status',2);
+			$crud->or_where('reservation.status',2);
+			$crud->unset_add();
+			$crud->unset_edit();
+			$crud->unset_delete();
+			
+			$crud->unset_read();
+			$output = $crud->render();
+
+			$session_data = $this->session->userdata('logged_in');
+			$data['email'] = $session_data['email'];
+			$this->_viewHistory($output);
+	   }
+	   else
+	   {
+			//If no session, redirect to login page
+			redirect('login', 'refresh');
+	   }
+	}
+
+	function _viewHistory($output = null)
+	{
+		$this->load->view('res_history_view.php',$output);
+	}
+	
+	function cancel()
+	{
+	   if($this->session->userdata('logged_in'))
+	   {
+			$crud = new grocery_CRUD();
+			$crud->set_table('reservation');
+			$crud->columns('reserver_id', 'building_id', 'room_id', 'num_people', 'start_date', 'end_date', 'activity', 'status');
+			$crud->unset_columns('reason');
+			$crud->set_relation('reserver_id', 'user', 'firstname');
+			$crud->set_relation('status', 'reservation_status', 'status');
+			$crud->set_relation('room_id', 'room', 'room_name');
+			$crud->set_relation('building_id', 'building', 'building_name');
+			$crud->add_action('', '', 'home/cancel_reservation', 'cancel-icon');
+			$crud->display_as('reserver_id', 'Reserver');
+			$crud->display_as('room_id', 'Room');
+			$crud->display_as('num_people', 'Attendants');
+			$crud->display_as('building_id', 'Building');
+			$crud->where('reservation.status',1);
+			$crud->unset_add();
+			$crud->unset_edit();
+			$crud->unset_delete();
+			
+			$crud->unset_read();
+			$output = $crud->render();
+
+			$session_data = $this->session->userdata('logged_in');
+			$data['email'] = $session_data['email'];
+			$this->_viewCancel($output);
+	   }
+	   else
+	   {
+			//If no session, redirect to login page
+			redirect('login', 'refresh');
+	   }
+	}
+	
+	function _viewCancel($output = null)
+	{
+		$this->load->view('cancel_view.php',$output);
+	}
+	
+	public function cancel_reservation($reservation_id = null)
+	{
+		$this->reservation_model->cancel_reservation($reservation_id);
+		echo json_encode(array('success' => true , 'success_message' => "The reservation has been successfully canceled!"));
+	}
 }
 ?>

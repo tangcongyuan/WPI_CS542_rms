@@ -14,7 +14,7 @@ class User_model extends CI_Model {
 			return $query->result_array();
 		}
 
-		$query = $this->db->get_where('user', array('id' => $slug));
+		$query = $this->db->get_where('user', array('user_id' => $slug));
 		return $query->row_array();
 	}
 
@@ -64,6 +64,22 @@ class User_model extends CI_Model {
 			'usertype' => 1
 		);
 		return $this->db->insert('user', $data);
+	}
+
+	function update_user_password()
+	{
+		$session_data = $this->session->userdata('logged_in');
+		$userObject = $this->user_model->get_users($session_data['id']);
+		//print_r($userObject); die();
+		$data['id'] = $userObject['user_id'];
+		$data['email'] = $userObject['email'];
+		$data['firstname'] = $userObject['firstname'];
+		$data['lastname'] = $userObject['lastname'];
+		$this->db->where('user_id', $data['id']);
+		$pd = array(
+			'password' => MD5($this->input->post('password'))
+		);
+		return $this->db->update('user', $pd);
 
 	}
 }

@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,7 +10,7 @@
     <meta name="author" content="">
 
     <title>RMS - Building</title>
-	 <?php 
+	 <?php
 		foreach($css_files as $file): ?>
 		<link type="text/css" rel="stylesheet" href="<?php echo $file; ?>" />
 	<?php endforeach; ?>
@@ -83,7 +82,7 @@
                     <ul class="nav" id="side-menu">
                         <li class="sidebar-search">
                             <div class="input-group custom-search-form">
-                                
+
                             </div>
                             <!-- /input-group -->
                         </li>
@@ -128,7 +127,7 @@
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
-                        
+
                     </ul>
                 </div>
                 <!-- /.sidebar-collapse -->

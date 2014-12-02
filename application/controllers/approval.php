@@ -30,7 +30,7 @@ class Approval extends CI_Controller {
 			//to refresh list; only to show waiting reservations
 			$crud->where('reservation.status',1);
 			$crud->add_action('', '', 'approval/approve', 'approve-icon');
-    		$crud->add_action('', '', 'approval/reject', 'reject-icon');
+    	$crud->add_action('', '', 'approval/reject', 'reject-icon');
 			$crud->unset_add();
 			$crud->unset_edit();
 			$crud->unset_delete();

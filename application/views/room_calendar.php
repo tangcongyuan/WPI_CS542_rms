@@ -180,7 +180,7 @@
 				//alert(date.format('TT'));
 				if(view.name == 'month')
 				{
-					$('#calendar').fullCalendar('gotoDate',today);
+					$('#calendar').fullCalendar('gotoDate',date);
 					$('#calendar').fullCalendar('changeView','agendaDay');
 				}
 			},
@@ -250,7 +250,7 @@
 			}
 		});
 
-    $('#calendar').fullCalendar('today');
+    $('#calendar').fullCalendar();
 
 	});
 

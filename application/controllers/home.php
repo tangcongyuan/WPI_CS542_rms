@@ -146,7 +146,7 @@ class Home extends CI_Controller {
 			$crud->display_as('building_id', 'Building');
 			//to refresh list; only to show waiting reservations
 			$crud->or_where('reservation.status',2);
-			$crud->or_where('reservation.status',2);
+			$crud->or_where('reservation.status',3);
 			$crud->unset_add();
 			$crud->unset_edit();
 			$crud->unset_delete();
@@ -174,6 +174,7 @@ class Home extends CI_Controller {
 	{
 	   if($this->session->userdata('logged_in'))
 	   {
+			$session_data = $this->session->userdata('logged_in');
 			$crud = new grocery_CRUD();
 			$crud->set_table('reservation');
 			$crud->columns('reserver_id', 'building_id', 'room_id', 'num_people', 'start_date', 'end_date', 'activity', 'status');
@@ -188,6 +189,7 @@ class Home extends CI_Controller {
 			$crud->display_as('num_people', 'Attendants');
 			$crud->display_as('building_id', 'Building');
 			$crud->where('reservation.status',1);
+			$crud->where('reservation.reserver_id',$session_data['id']);
 			$crud->unset_add();
 			$crud->unset_edit();
 			$crud->unset_delete();
@@ -195,7 +197,7 @@ class Home extends CI_Controller {
 			$crud->unset_read();
 			$output = $crud->render();
 
-			$session_data = $this->session->userdata('logged_in');
+			
 			$data['email'] = $session_data['email'];
 			$this->_viewCancel($output);
 	   }

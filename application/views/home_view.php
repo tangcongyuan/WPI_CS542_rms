@@ -144,7 +144,9 @@
 						<?php
 							}
 						?>
-                        
+                        <li>
+                            <a class="active" href="<?php echo base_url(); ?>index.php/report"><i class="fa fa-dashboard fa-fw"></i> Report</a>
+                        </li>
                     </ul>
                 </div>
                 <!-- /.sidebar-collapse -->

@@ -21,7 +21,7 @@ USE `rms`;
 #
 
 DROP TABLE IF EXISTS `role`;
-CREATE TABLE `usertype` (
+CREATE TABLE `role` (
   `Id` int(3) NOT NULL AUTO_INCREMENT,
   `role_name` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`Id`)

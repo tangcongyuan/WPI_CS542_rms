@@ -10,7 +10,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>RMS - Choose Room</title>
+    <title>RMS - Equipment</title>
 	 <?php 
 		foreach($css_files as $file): ?>
 		<link type="text/css" rel="stylesheet" href="<?php echo $file; ?>" />
@@ -142,7 +142,6 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header">Welcome</h1>
-						
                     </div>
                     <!-- /.col-lg-12 -->
                 </div>
@@ -150,11 +149,9 @@
                     <div class="col-lg-12">
 						<div class="panel panel-primary">
                         <div class="panel-heading">
-                             <b>Reserve a Room >> <i class="fa fa-building-o fa-fw"></i> Choose Building:  >> <i class="fa fa-building-o fa-fw"></i> Choose Room:</b>
+                             <b>Equipment Administration</b>
                         </div>
 						<div class="panel-body">
-							<div align="right"><a href="<?php echo base_url(); ?>index.php/home/" class="btn btn-primary btn-sm">Back</a></div>
-							<br />
 							<?php echo $output; ?>
 						</div>
 						</div>

@@ -5,7 +5,7 @@ class Home extends CI_Controller {
 	function __construct()
 	{
 	   parent::__construct();
-     $this->load->model('reservation_model');
+	   $this->load->model('reservation_model');
 	   $this->load->library('grocery_CRUD');
 	   $this->load->model('reservation_model');
 	   $this->load->model('room_model');
@@ -18,7 +18,7 @@ class Home extends CI_Controller {
 			$crud = new grocery_CRUD();
 			$crud->set_table('building');
 			$crud->columns('building_name','location');
-			$crud->add_action('', '', 'home/room', 'read-icon');
+			$crud->add_action('', '', 'home/room', 'forward-icon');
 			$crud->unset_add();
 			$crud->unset_edit();
 			$crud->unset_delete();
@@ -42,7 +42,8 @@ class Home extends CI_Controller {
 		$crud->set_table('room');
 		$crud->columns('room_name','floor','size');
 		$crud->where('room.building_id',$param);
-		$crud->add_action('', '', 'home/room_calendar', 'read-icon');
+		$crud->add_action('', '', 'home/room_calendar', 'forward-icon');
+		$crud->add_action('', '', 'room/room_detail', 'read-icon');
 		$crud->unset_add();
 		$crud->unset_edit();
 		$crud->unset_delete();

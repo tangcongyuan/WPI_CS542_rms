@@ -136,6 +136,9 @@
                                     <a href="<?php echo base_url(); ?>index.php/equipment"><i class="fa fa-gear fa-fw"></i> Equipment</a>
                                 </li>
 								<li>
+                                    <a href="<?php echo base_url(); ?>index.php/room_equipment"><i class="fa fa-briefcase fa-fw"></i> Room Equipment</a>
+                                </li>
+								<li>
                                     <a href="<?php echo base_url(); ?>index.php/user"><i class="fa fa-user fa-fw"></i> User</a>
                                 </li>
                             </ul>

@@ -680,6 +680,19 @@ div.pGroup {
 	margin-left:5px;
 	display: block;
 }
+.flexigrid .forward-icon
+{
+	background:url(images/arrow_right.png) no-repeat;
+	cursor: pointer;
+	width: 16px;
+	height:16px;
+	float:right;
+	border: none !important;
+	padding:0px !important;
+	padding-bottom:0px !important;
+	margin-left:5px;
+	display: block;
+}
 .flexigrid .reject-icon
 {
 	background:url(images/reject.png) no-repeat;

@@ -278,7 +278,7 @@
         <div id="page-wrapper">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-lg-12">
+                    <div class="col-lg-12">						
                         <h1 class="page-header">Welcome</h1>
                     </div>
                     <!-- /.col-lg-12 -->
@@ -289,8 +289,10 @@
                         <div class="panel-heading">
                              <b>Reserve a Room >> <i class="fa fa-building-o fa-fw"></i> Choose Building:  >> <i class="fa fa-home fa-fw"></i> Choose Room >> <i class="fa fa-calendar fa-fw"></i> Look-up Calendar for Room <?php echo $room_name; ?></b>
                         </div>
+						<?php echo $message; ?>
 						<div class="panel-body">
-						<h2 align="center">Room Calendar - <?php echo $room_name; ?></h2>
+						<div align="right"><a href="<?php echo base_url(); ?>index.php/home" class="btn btn-primary btn-sm">Back</a></div>
+						<h2 align="center">Room Calendar <?php echo $room_name; ?></h2>
 	<div id='calendar'></div>
 							<div id="dialog" class="event-dialog" title="Event"  style="display:none;">
 		<div id="dialog-inner">

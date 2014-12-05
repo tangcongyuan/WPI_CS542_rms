@@ -14,7 +14,7 @@ class User extends CI_Controller {
     $crud->set_table('user');
 	$crud->set_relation('usertype', 'role', 'role_name');
     $crud->columns('firstname','lastname','email','usertype');
-	$crud->field_type('role','dropdown',array('1' => 'active', '2' => 'private','3' => 'spam'));
+	$crud->field_type('role','dropdown');
     $output = $crud->render();
     $this->_example_output($output);
   }

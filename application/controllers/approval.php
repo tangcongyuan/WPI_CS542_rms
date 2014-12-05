@@ -63,10 +63,10 @@ class Approval extends CI_Controller {
 	function reject($reservation_id = null)
 	{
 		$this->load->helper('form');
-    $this->load->library('form_validation');
-    $data['reservation_id'] = $reservation_id;
-    $reservation_id = (isset($_POST['reservation_id'])) ? $_POST['reservation_id'] : '';
-    $this->session->set_flashdata('reservation_id',$reservation_id);
+		$this->load->library('form_validation');
+		$data['reservation_id'] = $reservation_id;
+		$reservation_id = (isset($_POST['reservation_id'])) ? $_POST['reservation_id'] : '';
+		$this->session->set_flashdata('reservation_id',$reservation_id);
 
 		$this->form_validation->set_rules('reason', 'Reason', 'required');
 		if ($this->form_validation->run() === FALSE)

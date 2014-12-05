@@ -92,17 +92,34 @@ class Home extends CI_Controller {
 
 	function room_calendar($room_id = null)
 	{
+		$message = '';
 		$data['room_id'] = $room_id;
+		$message = $this->session->flashdata('message');
+		$data['message'] = $this->session->flashdata('message');
+		
 		$data['room_name'] = $this->room_model->get_room($room_id)->room_name;
 		$this->load->view('room_calendar.php', $data);
 	}
 
-	function reserve($room_id = null, $start= null, $hourStart= null, $end= null, $hourEnd= null)
+	function reserve()
 	{
 			$room_id = (isset($_POST['room_id'])) ? $_POST['room_id'] : '';
 			$this->session->set_flashdata('room_id',$room_id);
-			$this->reservation_model->set_reservation();
-			redirect('home/room_calendar/'.$room_id);
+			$result = $this->reservation_model->set_reservation();
+			
+			$data['message']=$result;
+			if($result)
+			{
+				$this->session->set_flashdata('message',$result);
+				//$this->load->view("room_calendar/room_id", $data);
+				//$this->session->set_flashdata('message',$result);
+				redirect('home/room_calendar/'.$room_id);
+				//redirect('home/cancel', $data)
+			}
+			else
+			{
+				redirect('home/room_calendar/'.$room_id);
+			}
 	}
 
 	function formReservation()

@@ -1,4 +1,3 @@
-
 <?php
 class Room_model extends CI_Model {
 
@@ -14,6 +13,11 @@ class Room_model extends CI_Model {
       return $query->result_array();
     }
 
+    $query = $this->db->get_where('room', array('room_id' => $room_id));
+    return $query->row();
+  }
+  
+  public function get_building($room_id = FALSE){
     $query = $this->db->get_where('room', array('room_id' => $room_id));
     return $query->row();
   }

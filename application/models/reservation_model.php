@@ -45,7 +45,7 @@ class Reservation_model extends CI_Model {
 			'room_id' => $this->input->post('room_id'),
 			'status' => 1,
 			'reserver_id' => $session_data['id'],
-			'building_id' => 1 //$this->room_model->get_room($this->input->post('room_id'))->building_id
+			'building_id' => $this->room_model->get_room($this->input->post('room_id'))->building_id
 		);
 
 		$this->session->set_flashdata('room_id',$this->input->post('room_id'));

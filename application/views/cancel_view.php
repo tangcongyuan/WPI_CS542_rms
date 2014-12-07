@@ -78,8 +78,9 @@
             </ul>
             <!-- /.navbar-top-links -->
 
-            <div class="navbar-default sidebar" role="navigation">
-				                    <ul class="nav" id="side-menu">
+<div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                    <ul class="nav" id="side-menu">
                         <li class="sidebar-search">
                             <div class="input-group custom-search-form">
                                 
@@ -135,6 +136,9 @@
                                     <a href="<?php echo base_url(); ?>index.php/equipment"><i class="fa fa-gear fa-fw"></i> Equipment</a>
                                 </li>
 								<li>
+                                    <a href="<?php echo base_url(); ?>index.php/room_equipment"><i class="fa fa-briefcase fa-fw"></i> Room Equipment</a>
+                                </li>
+								<li>
                                     <a href="<?php echo base_url(); ?>index.php/user"><i class="fa fa-user fa-fw"></i> User</a>
                                 </li>
                             </ul>
@@ -143,14 +147,14 @@
 						<?php
 							}
 						?>
-                        
+                        <li>
+                            <a class="active" href="<?php echo base_url(); ?>index.php/report"><i class="fa fa-dashboard fa-fw"></i> Report</a>
+                        </li>
                     </ul>
-                
-			
-			<!-- /.sidebar-collapse -->
+                </div>
+                <!-- /.sidebar-collapse -->
             </div>
-            <!-- /.navbar-static-side -->
-        </nav>
+            <!-- /.navbar-static-side -->        </nav>
 
         <!-- Page Content -->
         <div id="page-wrapper">

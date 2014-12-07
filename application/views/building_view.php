@@ -77,12 +77,12 @@
             </ul>
             <!-- /.navbar-top-links -->
 
-            <div class="navbar-default sidebar" role="navigation">
+<div class="navbar-default sidebar" role="navigation">
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
                         <li class="sidebar-search">
                             <div class="input-group custom-search-form">
-
+                                
                             </div>
                             <!-- /input-group -->
                         </li>
@@ -93,11 +93,19 @@
                                     <a href="<?php echo base_url(); ?>index.php/home"><i class="fa fa-calendar fa-fw"></i>  Reserve</a>
                                 </li>
 								<li>
-                                    <a href="<?php echo base_url(); ?>index.php/home/history"><i class="fa fa-archive fa-fw"></i>  Reservation History</a>
+                                    <a href="<?php echo base_url(); ?>index.php/home/cancel"><i class="fa fa-eraser fa-fw"></i>  Cancel Reservation</a>
                                 </li>
+								<li>
+                                    <a href="<?php echo base_url(); ?>index.php/home/history"><i class="fa fa-archive fa-fw"></i>  Reservation History</a>
+                                </li>								
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
+						<?php 
+							$session_data = $this->session->userdata('logged_in');
+							if($session_data['role'] == 2 || $session_data['role'] == 3) //reserver=1, approval=2, admin=3
+							{
+						?>
 						<li>
                            <a href="#"><i class="fa fa-check fa-fw"></i> Approval<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
@@ -109,6 +117,11 @@
                                 </li>
                             </ul>
                         </li>
+						<?php
+							}
+							if($session_data['role'] == 3) //reserver=1, approval=2, admin=3
+							{
+						?>
                         <li>
                             <a href="#"><i class="fa fa-cogs fa-fw"></i> Management<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
@@ -122,18 +135,25 @@
                                     <a href="<?php echo base_url(); ?>index.php/equipment"><i class="fa fa-gear fa-fw"></i> Equipment</a>
                                 </li>
 								<li>
+                                    <a href="<?php echo base_url(); ?>index.php/room_equipment"><i class="fa fa-briefcase fa-fw"></i> Room Equipment</a>
+                                </li>
+								<li>
                                     <a href="<?php echo base_url(); ?>index.php/user"><i class="fa fa-user fa-fw"></i> User</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
-
+						<?php
+							}
+						?>
+                        <li>
+                            <a class="active" href="<?php echo base_url(); ?>index.php/report"><i class="fa fa-dashboard fa-fw"></i> Report</a>
+                        </li>
                     </ul>
                 </div>
                 <!-- /.sidebar-collapse -->
             </div>
-            <!-- /.navbar-static-side -->
-        </nav>
+            <!-- /.navbar-static-side -->        </nav>
 
         <!-- Page Content -->
         <div id="page-wrapper">

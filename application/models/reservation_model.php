@@ -67,7 +67,13 @@ class Reservation_model extends CI_Model {
             );
 
 		$this->db->where('reservation_id', $reservation_id);
-		return $this->db->update('reservation', $data);
+		if(!$this->db->update('reservation', $data))
+		{
+			//$err = $this->db->conn_id;
+			//return "<div class='alert alert-danger'>You cannot approve reservation in the past!</div>"; 	
+			return json_encode(array('success' => false , 'error_message' => "The reservation in the past cannot be approved!"));
+		}
+		else return json_encode(array('success' => true , 'success_message' => "The reservation has been successfully approved!")); //return "<div class='alert alert-success'>The reservation has been approved!</div>";
 	}
 	
 	public function cancel_reservation($reservation_id)

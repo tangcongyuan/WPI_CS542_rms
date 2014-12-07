@@ -56,8 +56,8 @@ class Approval extends CI_Controller {
 
 	public function approve($reservation_id = null)
 	{
-		$this->reservation_model->approve_reservation($reservation_id);
-		echo json_encode(array('success' => true , 'success_message' => "The reservation has been successfully approved!"));
+		echo $this->reservation_model->approve_reservation($reservation_id);
+		//echo json_encode(array('success' => true , 'success_message' => "The reservation has been successfully approved!"));
 	}
 
 	function reject($reservation_id = null)

@@ -87,8 +87,8 @@ class Approval extends CI_Controller {
 	   {
 			$crud = new grocery_CRUD();
 			$crud->set_table('reservation');
-			$crud->columns('reserver_id', 'building_id', 'room_id', 'num_people', 'start_date', 'end_date', 'activity', 'status');
-			$crud->unset_columns('reason');
+			$crud->columns('reserver_id', 'building_id', 'room_id', 'num_people', 'start_date', 'end_date', 'activity', 'status', 'reason');
+			//$crud->unset_columns('reason');
 			$crud->set_relation('reserver_id', 'user', 'firstname');
 			$crud->set_relation('status', 'reservation_status', 'status');
 			$crud->set_relation('room_id', 'room', 'room_name');
@@ -99,7 +99,7 @@ class Approval extends CI_Controller {
 			$crud->display_as('num_people', 'Attendants');
 			$crud->display_as('building_id', 'Building');
 			//to refresh list; only to show waiting reservations
-			
+
 			$crud->or_where('reservation.status',2);
 			$crud->or_where('reservation.status',3);
 
